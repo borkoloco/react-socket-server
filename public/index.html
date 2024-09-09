@@ -47,9 +47,7 @@
       referrerpolicy="no-referrer"
     ></script>
     <script>
-      const socket = io(
-        "https://react-socket-server2-4ba2897ab88d.herokuapp.com/"
-      );
+      const socket = io("https://reactsockets.netlify.app");
       //   const socket = io("http://localhost:8080");
       const formulario = document.querySelector("#miFormulario");
       const mensajes = document.querySelector("#misMensajes");
@@ -59,13 +57,13 @@
         e.preventDefault();
 
         const nuevoMensaje = txtMensaje.value;
-        // console.log(nuevoMensaje);
+        console.log(nuevoMensaje);
         socket.emit("mensaje-to-server", { texto: nuevoMensaje });
       });
 
       socket.on("mensaje-from-server", (data) => {
         mensajes.innerHTML += `<li>${data.texto}</li>`;
-        // console.log(data);
+        console.log(data);
       });
     </script>
   </body>
