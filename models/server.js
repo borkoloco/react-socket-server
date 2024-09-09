@@ -35,7 +35,7 @@ class Server {
 
     //inicializo el servidor
     this.server.listen(this.port, () => {
-      console.log("Servidor corriendo en puerto ", this.port);
+      console.log("Servidor corriendo en puerto ", this.port || null);
     });
   }
 }
